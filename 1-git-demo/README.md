@@ -1,7 +1,7 @@
 # geocomputing coffee - 26 Oct. 2023
 Git and GitHub basics and interactive remote computing on curnagl's GPU node sing VS Code and the Julia and Remote-SSh extensions.
 
-## Topic covered
+## Topics covered
 - Git basics: repo creation, clone, pull, stage, push
 - VS Code and Julia, Git, Remote-SSH extensions
 - Julia programming: juliaup, CUDA, benchmarking
@@ -27,9 +27,7 @@ Make sure to add a `README` and select a licence (suggesting MIT).
 
 Once you're done, clone the repository using either `HTTPS` or `SSH`; copy the provided link.
 
-<center>
-    <img src="assets/git_clone.png" title="git clone" alt="git clone" width="50%">
-</center>
+<img src="assets/git_clone.png" title="git clone" alt="git clone" width="50%">
 
 On your local computer, navigate to a folder you want to clone the repository into, and type
 ```
@@ -39,9 +37,7 @@ replacing `XYZ.git` with the content you copied from GitHub.
 
 Open VS Code and open the folder of your git repository you just cloned.
 
-<center>
-    <img src="assets/git_open.png" title="git open" alt="git open" width="50%">
-</center>
+<img src="assets/git_open.png" title="git open" alt="git open" width="50%">
 
 Add a `scripts` folder in which you can add the memcopy `bench.jl` Julia script from [here](https://gist.github.com/luraess/7e7410ac4113b9fe9bb951510d0baf76).
 
@@ -54,9 +50,7 @@ Manifest.toml
 
 Then in the "Source Control" panel (on the left in VS Code), click the `+` next to "Changes" to stage recent modifications.
 
-<center>
-    <img src="assets/git_commit.png" title="git commit" alt="git commit" width="50%">
-</center>
+<img src="assets/git_commit.png" title="git commit" alt="git commit" width="50%">
 
 Add a meaningful commit message, press "Commit" and "Sync" (or "push" from the `⋅⋅⋅` icon next to "Source Control"). That's it, head to [GitHub](www.github.com) to check that your addition are now pushed to the remote.
 
@@ -79,9 +73,7 @@ We can use VS Code to remotely connect to a GPU compute node on Curnagl via ssh 
 
 First, we need to add Curnagl as remote server in our "SSH Config File". Select the "Remote Explorer" panel on the left side of VS Code. Then, click on the wheel in the upper left corner next to the SSH text
 
-<center>
-    <img src="assets/remote_server.png" title="remote server" alt="remote server" width="50%">
-</center>
+<img src="assets/remote_server.png" title="remote server" alt="remote server" width="50%">
 
 Select the first file proposed (`.ssh/config`) and add to it following replacing `<username>` by your username on Curnagl
 ```
@@ -104,9 +96,7 @@ Host dnagpu*
 
 Now, we should see the Curnagl entry in the "REMOTES"
 
-<center>
-    <img src="assets/remote.png" title="remote" alt="remote" width="40%">
-</center>
+<img src="assets/remote.png" title="remote" alt="remote" width="50%">
 
 ## Installing Julia locally on Curnagl
 Then, on Curnagl, we can start a terminal within VS Code (`cmd + j` on macOS, `ctrl + j` on Windows) and install Julia locally. The simplest is to repeat the procedure using [juliaup](https://github.com/JuliaLang/juliaup).
@@ -126,7 +116,7 @@ total 1
 lrwxrwxrwx 1 <username> unil 15 Aug 21 14:59 scratch -> /scratch/<username>
 ```
 
-Then, `cd scratch` to change directory and clone the `git-demo` [https://github.com/Unil-SGC/git-demo](https://github.com/Unil-SGC/git-demo) repository which contains the GPU-ready addition of the memory copy benchmark [bench.jl](https://github.com/Unil-SGC/git-demo/blob/main/scripts/bench.jl) and the GPU-only version [bench_gpu.jl](https://github.com/Unil-SGC/git-demo/blob/main/scripts/bench_gpu.jl)
+Then, `cd scratch` to change directory and clone the [git-demo](https://github.com/Unil-SGC/git-demo) repository [https://github.com/Unil-SGC/git-demo](https://github.com/Unil-SGC/git-demo) which contains the GPU-ready addition of the memory copy benchmark [bench.jl](https://github.com/Unil-SGC/git-demo/blob/main/scripts/bench.jl) and the GPU-only version [bench_gpu.jl](https://github.com/Unil-SGC/git-demo/blob/main/scripts/bench_gpu.jl)
 ```
 git clone https://github.com/Unil-SGC/git-demo.git
 ```
@@ -169,9 +159,7 @@ Fri Oct 27 11:23:02 2023
 
 At this point, we could already run code on the GPU. However, VS Code and Julia is not yet running on the `dnagpu001` node, only the terminal is there. If we want to hook VS Code and then launch Julia interactively on `dnagpu001` node, we need to open the command panel in VS Code (`cmd + shift + p` on macOS, and `ctrl + shift + p` on Windows) and type `Remote-SSH: Connect to Host...`
 
-<center>
-    <img src="assets/remote_host.png" title="remote" alt="remote" width="50%">
-</center>
+<img src="assets/remote_host.png" title="remote" alt="remote" width="50%">
 
 Upon hitting "enter", you should see a new VS Code instance opening: now you're hooked into the GPU node :rocket:
 
