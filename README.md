@@ -1,4 +1,4 @@
-# geocomputing-coffee
+# geocomputing-coffee ☕
 Informal meet-up for geocomputing enthusiasts
 
 ### Meeting material:
