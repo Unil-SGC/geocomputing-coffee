@@ -55,7 +55,7 @@ Then in the "Source Control" panel (on the left in VS Code), click the `+` next 
 Add a meaningful commit message, press "Commit" and "Sync" (or "push" from the `⋅⋅⋅` icon next to "Source Control"). That's it, head to [GitHub](www.github.com) to check that your addition are now pushed to the remote.
 
 ## Run the Julia script locally
-You can locally run the `bench.jl` script. To do so, launch Julia by typing `Julia: Start REPL` in the command panel from VS Code. Alternatively, you can hit `ctrl + j` followed by `o` to launch Julia.
+You can locally run the `bench.jl` script. To do so, launch Julia by typing `Julia: Start REPL` in the command panel from VS Code. Alternatively, you can hit `alt + j` followed by `o` to launch Julia.
 
 > :bulb: You can access the command panel upon typing `cmd + shift + p` on macOS, and `ctrl + shift + p` on Windows.
 
@@ -163,7 +163,7 @@ At this point, we could already run code on the GPU. However, VS Code and Julia 
 
 Upon hitting "enter", you should see a new VS Code instance opening: now you're hooked into the GPU node :rocket:
 
-First, open the folder you previously cloned `scratch/git-demo` within VS Code. Then, you can launch again the Julia REPL (`cmd + j + o` on macOS, `ctrl + j + o` on Windows) and try plotting an array of random numbers initialised on the GPU the verify that interactive plotting and GPU access is working.
+First, open the folder you previously cloned `scratch/git-demo` within VS Code. Then, you can launch again the Julia REPL (`alt + j + o`) and try plotting an array of random numbers initialised on the GPU the verify that interactive plotting and GPU access is working.
 ```julia-repl
 pkg > activate .
 
@@ -186,4 +186,6 @@ If all went fine, you should see a plot pane popping-up in VS Code.
 
 The final step is to run the `bench_gpu.jl` code and verify the memory copy throughput of the Nvidia A100 GPU.
 
-> :bulb: Obviously many things may possibly go wrong in setting this up. If you hit any issue, just reach out.
+> :warning: Currently GPUs in the interactive partition are shared and one has only access to half a GPU, i.e., one will also only get half of the peak perf ([see here](https://wiki.unil.ch/ci/books/high-performance-computing-hpc/page/curnagl#bkmrk-note-on-gpus-in-the-)).
+
+> :bulb: Obviously many things may possibly go wrong in setting this up. If you hit any issue, just reach out, or even better, open a Pull Request on GitHub suggesting a fix.
